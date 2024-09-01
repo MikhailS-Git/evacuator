@@ -1,0 +1,50 @@
+@import '../../../styles/grid.scss';
+
+.create-add {
+    // .create-add__banner
+    
+    &__banner {
+    }
+    
+    // .create-add__form
+    
+    &__form {
+    }
+}
+.banner {
+    position: relative;
+    min-height: 125px;
+    background-image: url(../../../assets/img/banner-grey.png);
+    background-position: 0px -25px;
+
+    // .banner__img
+
+    // &__img {
+    //     margin-top: -25px; // не удалось адекватно вырезать изображение из фигмы 
+
+    //     @media($media_md) {
+    //         min-height: 120px;
+    //     }
+    // }
+
+    // .banner__title
+
+    &__title {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+        color: #fff;
+        font-size: 50px;
+        font-weight: bold;
+
+        @media($media_lg) {
+            font-size: 36px;
+        }
+
+        @media($media_md) {
+            font-size: 28px;
+        }
+    }
+}

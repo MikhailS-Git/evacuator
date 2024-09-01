@@ -1,0 +1,120 @@
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 36px;
+    background-color: transparent;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s linear;
+
+    @media($media_lg) {
+        padding: 14px 30px;
+        font-size: 18px;
+    }
+
+    @media($media_md) {
+        padding: 10px 26px;
+        font-size: 16px;
+    }
+
+    &--primary {
+        background-color: var(--main-blue);
+        color: #fff;
+
+        &:hover {
+            background-color: var(--main-blue-hover);
+        }
+
+        &:active {
+            background-color: var(--main-blue-click);
+        }
+
+        &:disabled {
+            background-color: var(--main-blue-disabled);
+        }
+    }
+
+    &--secondary {
+        border: 1px solid var(--main-blue);
+        color: var(--main-blue);
+
+        &:hover {
+            border-color: var(--main-blue-click);
+            color: var(--main-blue-click);
+        }
+
+        &:active {
+            border-color: var(--main-blue-click);
+            color: var(--main-blue-click);
+        }
+
+        &:disabled {
+            border-color: var(--main-blue-disabled);
+            color: var(--main-blue-disabled);
+        }
+    }
+
+    &--outlined {
+        border-radius: 10px;
+        color: var(--grey);
+        border: 1px solid var(--grey);
+
+        &:hover {
+            border-color: var(--main-blue-hover);
+            color: var(--main-blue-hover);
+        }
+
+        &:active {
+            border-color: var(--main-blue-click);
+            color: var(--main-blue-click);
+        }
+
+        &:disabled {
+            border-color: var(--main-blue-disabled);
+            color: var(--main-blue-disabled);
+        }
+    }
+
+    &--small {
+        border-radius: 6px;
+        width: 52px;
+        height: 52px;
+        padding: 0px;
+        color: var(--main-blue);
+        border: 1px solid var(--main-blue);
+        font-size: 26px;
+        font-weight: bold;
+
+        @media($media_sm) {
+            width: 40px;
+            height: 40px;
+            font-size: 18px;
+        }
+
+        &:hover {
+            border-color: var(--main-blue-hover);
+            color: var(--main-blue-hover);
+        }
+
+        &:active {
+            border-color: var(--main-blue-click);
+            color: var(--main-blue-click);
+        }
+
+        &:disabled {
+            border-color: var(--main-blue-disabled);
+            color: var(--main-blue-disabled);
+        }
+    }
+
+    &:disabled {
+        pointer-events: none;
+    }
+}

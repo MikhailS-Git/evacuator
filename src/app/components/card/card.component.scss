@@ -1,0 +1,261 @@
+@import '../../../styles/grid.scss';
+
+.card {
+    border-radius: 20px;
+    box-shadow: var(--shadow-card);
+    background-color: #fff;
+    overflow: hidden;
+
+    // .card__container
+
+    &__container {
+        padding: 40px 48px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+
+        @media($media_xs) {
+            padding: 25px 30px;
+        }
+    }
+
+    // .card__header
+
+    &__header {
+    }
+
+    // .card__title
+
+    &__title {
+        color: var(--dark);
+    }
+
+    // .card__body
+
+    &__body {
+    }
+    
+    // .card__content
+    
+    &__content {
+        display: flex;
+        gap: 28px;
+
+        @media($media_lg) {
+            flex-wrap: wrap;
+        }
+    }
+
+    // .card__picture
+
+    &__picture {
+        width: 32%;
+        height: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+
+        @media($media_sm) {
+            width: 100%;
+        }
+    }
+
+    // .card__data
+
+    &__data {
+        width: 38%;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        @media($media_lg) {
+            flex-grow: 1;
+         }
+    }
+
+    // .card__dataItem
+
+    &__dataItem {
+        padding: 16px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        background-color: #F2F4F8;
+        border-radius: 10px;
+    }
+
+    // .card__dataItemName
+
+    &__dataItemName {
+        color: var(--grey);
+        font-size: 20px;
+
+        @media($media_lg) {
+            font-size: 16px;
+        }
+    }
+
+    // .card__dataItemValue
+
+    &__dataItemValue {
+        color: var(--grey);
+        font-size: 20px;
+        font-weight: bold;
+        white-space: nowrap;
+
+        @media($media_lg) {
+            font-size: 16px;
+        }
+    }
+
+    // .card__contacts
+
+    &__contacts {
+        // flex-grow: 1;
+        // display: flex;
+        // flex-direction: column;
+        // align-items: stretch;
+        // gap: 21px;
+
+        flex-grow: 1;
+        display: grid;
+        grid-template-rows: 20% 20% 30% 30%;
+        gap: 15px;
+
+        @media($media_lg) {
+           min-width: 100%;
+           display: flex;
+           align-items: center;
+           justify-content: space-around;
+           flex-wrap: wrap;
+           gap: 30px 0px;
+        }
+
+        @media($media_sm) {
+            
+        }
+    }
+
+    // .card__contactsTop
+
+    // &__contactsTop {
+    //     display: flex;
+    //     flex-direction: column;
+    //     gap: 12px;
+
+    //     @media($media_lg) {
+    //        justify-content: space-around;
+    //      }
+    // }
+
+    // .card__contactsBottom
+
+    // &__contactsBottom {
+    //     flex-grow: 1;
+    //     display: flex;
+    //     flex-direction: column;
+    //     gap: 21px;
+    // }
+
+    // .card__contact
+
+    &__contact {
+        width: 100%;
+
+        .btn {
+            width: 100%;
+        }
+
+        @media($media_lg) {
+            width: 45%;
+         }
+
+         @media($media_sm) {
+            width: 100%;
+         }
+    }
+
+    // .card__placement
+
+    &__placement {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px 20px;
+        background-color: #FFF5CC;
+        border-radius: 10px;
+
+        @media($media_lg) {
+            width: 45%;
+         }
+
+         @media($media_sm) {
+            width: 100%;
+         }
+    }
+
+    // .card__placementTitle
+
+    &__placementTitle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        color: var(--grey);
+    }
+
+    // .card__placementValue
+
+    &__placementValue {
+        text-align: center;
+        color: var(--dark);
+        font-weight: bold;
+    }
+
+    // .card__orderAddvertBtn
+
+    &__orderAddvertBtn {
+        // margin-top: auto;
+
+        @media($media_lg) {
+            width: 45%;
+         }
+
+        @media($media_sm) {
+           width: 100%; 
+        }
+
+        .btn {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .text-small {
+            font-size: 12px;
+        }
+
+        .text-big {
+            font-size: 16px;
+            text-decoration: underline;
+        }
+    }
+
+    // .card__footer
+
+    &__footer {
+    }
+
+    // .card__footerText
+
+    &__footerText {
+        color: var(--dark);
+    }
+
+    // .card__empty
+
+    &__empty {
+        color: var(--grey);
+    }
+}

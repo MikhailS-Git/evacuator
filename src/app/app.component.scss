@@ -1,0 +1,23 @@
+.app {
+
+    // .app__header
+
+    &__header {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        z-index: 100;
+    }
+
+    // .app__content
+
+    &__content {
+        margin-top: var(--headerHeight);
+    }
+
+    // .app__footer
+
+    &__footer {
+    }
+}

@@ -1,0 +1,242 @@
+<div class="page create-add">
+    <section class="section create-add__banner banner">
+       <!-- <div class="banner__img">
+            <img src="assets/img/banner-grey.png" />
+       </div> -->
+       <h1 class="banner__title">Создание объявления</h1>
+    </section>
+    <div class="main-container">
+        <section class="section create-add__form form">
+            <div class="form__header">
+                <div class="form__img">
+                    <img src="assets/img/marketeq_money-alt-1.png" />
+                </div>
+                <div class="form__info">
+                    <span>
+                        Заполните все поля формы на размещение своего объявления на сайте.
+                        <br/>
+                        Размещение объявления платное. Стоимость за одно объявление составляет <b>990 руб</b>.
+                        <br/>
+                        Объявление будет опубликовано на сайте после оплаты и проверки модератором.
+                    </span>
+                </div>
+            </div>
+            <div class="form__body">
+                <ng-container *ngIf="form">
+                    <form class="form__form" [formGroup]="form">
+                        <ng-container [formGroupName]="'contacts'">
+                            <div class="form__group">
+                                <div class="form__control control">
+                                    <span class="control__label">Выберите город</span>
+                                    <div class="control__input">
+                                        <select #selectRef class="baseInput baseInput--select" [formControlName]="'city'">
+                                            <option></option>
+                                            <option value="msc">Москва</option>
+                                            <option value="spb">Санкт-Петербург</option>
+                                        </select>
+                                        <mat-icon class="control__chevron" [svgIcon]="'chevron-down'" (click)="openSelect()"></mat-icon>
+                                    </div>
+                                </div>
+                                <div class="form__control control">
+                                    <span class="control__label">Ваше имя</span>
+                                    <div class="control__input">
+                                        <input class="baseInput baseInput--input" [formControlName]="'name'" />
+                                    </div>
+                                </div>
+                                <div class="form__control control">
+                                    <span class="control__label">Номер мобильного телефона</span>
+                                    <div class="control__input">
+                                        <input class="baseInput baseInput--input" [formControlName]="'mobPhone'" [placeholder]="'+7 (999) 999 99 99'" />
+                                    </div>
+                                </div>
+                                <div class="form__control control">
+                                    <span class="control__label">Номер городского телефона</span>
+                                    <div class="control__input">
+                                        <input class="baseInput baseInput--input" [formControlName]="'phone'" [placeholder]="'+7 (999) 999 99 99'" />
+                                    </div>
+                                </div>
+                                <div class="form__control control">
+                                    <span class="control__label">Ваш email</span>
+                                    <div class="control__input">
+                                        <input class="baseInput baseInput--input" [formControlName]="'email'" [placeholder]="'example@gmail.com'" />
+                                    </div>
+                                </div>
+                                <div class="form__control control">
+                                    <span class="control__label">Адрес стоянки эвакуатора</span>
+                                    <div class="control__input">
+                                        <input class="baseInput baseInput--input" [formControlName]="'address'" />
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
+
+                        <div class="form__groupDevidor devidor">
+                            <div class="devidor__line"></div>
+                            <div class="devidor__title">
+                                <span>ИНФОРМАЦИЯ</span>
+                            </div>
+                            <div class="devidor__line"></div>
+                        </div>
+
+                        <ng-container [formGroupName]="'info'">
+                            <div class="form__group">
+                                <div class="form__control control">
+                                    <span class="control__label">Заголовок объявления</span>
+                                    <div class="control__input">
+                                        <input class="baseInput baseInput--input" [formControlName]="'title'" [placeholder]="'Не более 50 символов'" />
+                                    </div>
+                                </div>
+                                <div class="form__control control">
+                                    <span class="control__label">Заголовок объявления</span>
+                                    <div class="control__input">
+                                        <textarea class="baseInput baseInput--textarea" [formControlName]="'description'" [placeholder]="'Не более 50 символов'"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
+
+                        <div class="form__groupDevidor devidor">
+                            <div class="devidor__line"></div>
+                            <div class="devidor__title">
+                                <span>ЦЕНЫ</span>
+                            </div>
+                            <div class="devidor__line"></div>
+                        </div>
+
+
+                        <ng-container [formGroupName]="'prices'">
+                            <div class="form__group">
+                                <ng-container [formGroupName]="'car'">
+                                    <div class="form__control control">
+                                        <span class="control__label">Легковые автомобили</span>
+                                        <div class="control__line">
+                                            <div class="control__input">
+                                                <input class="baseInput baseInput--input" [formControlName]="'price'" />
+                                                <span class="control__postfix">рублей</span>
+                                            </div>
+                                            <label class="control__input checkbox">
+                                                <input type="checkbox" class="baseInput baseInput--hidden" [formControlName]="'notExist'" />
+                                                <mat-icon class="checkbox__icon checkbox__icon--unchecked" [svgIcon]="'checkbox-false'"></mat-icon>
+                                                <mat-icon class="checkbox__icon checkbox__icon--checked" [svgIcon]="'checkbox-true'"></mat-icon>
+                                                <span class="control__postfix">Услугу не оказываю</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                                <ng-container [formGroupName]="'moto'">
+                                    <div class="form__control control">
+                                        <span class="control__label">Мототехника</span>
+                                        <div class="control__line">
+                                            <div class="control__input">
+                                                <input class="baseInput baseInput--input" [formControlName]="'price'" />
+                                                <span class="control__postfix">рублей</span>
+                                            </div>
+                                            <label class="control__input checkbox">
+                                                <input type="checkbox" class="baseInput baseInput--hidden" [formControlName]="'notExist'" />
+                                                <mat-icon class="checkbox__icon checkbox__icon--unchecked" [svgIcon]="'checkbox-false'"></mat-icon>
+                                                <mat-icon class="checkbox__icon checkbox__icon--checked" [svgIcon]="'checkbox-true'"></mat-icon>
+                                                <span class="control__postfix">Услугу не оказываю</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                                <ng-container [formGroupName]="'outland'">
+                                    <div class="form__control control">
+                                        <span class="control__label">Внедорожник</span>
+                                        <div class="control__line">
+                                            <div class="control__input">
+                                                <input class="baseInput baseInput--input" [formControlName]="'price'" />
+                                                <span class="control__postfix">рублей</span>
+                                            </div>
+                                            <label class="control__input checkbox">
+                                                <input type="checkbox" class="baseInput baseInput--hidden" [formControlName]="'notExist'" />
+                                                <mat-icon class="checkbox__icon checkbox__icon--unchecked" [svgIcon]="'checkbox-false'"></mat-icon>
+                                                <mat-icon class="checkbox__icon checkbox__icon--checked" [svgIcon]="'checkbox-true'"></mat-icon>
+                                                <span class="control__postfix">Услугу не оказываю</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                                <ng-container [formGroupName]="'microbus'">
+                                    <div class="form__control control">
+                                        <span class="control__label">Микроавтобус</span>
+                                        <div class="control__line">
+                                            <div class="control__input">
+                                                <input class="baseInput baseInput--input" [formControlName]="'price'" />
+                                                <span class="control__postfix">рублей</span>
+                                            </div>
+                                            <label class="control__input checkbox">
+                                                <input type="checkbox" class="baseInput baseInput--hidden" [formControlName]="'notExist'" />
+                                                <mat-icon class="checkbox__icon checkbox__icon--unchecked" [svgIcon]="'checkbox-false'"></mat-icon>
+                                                <mat-icon class="checkbox__icon checkbox__icon--checked" [svgIcon]="'checkbox-true'"></mat-icon>
+                                                <span class="control__postfix">Услугу не оказываю</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                                <ng-container [formGroupName]="'surbubTarif'">
+                                    <div class="form__control control">
+                                        <span class="control__label">Загородный тариф</span>
+                                        <div class="control__line">
+                                            <div class="control__input">
+                                                <input class="baseInput baseInput--input" [formControlName]="'price'" />
+                                                <span class="control__postfix">руб/км</span>
+                                            </div>
+                                            <label class="control__input checkbox">
+                                                <input type="checkbox" class="baseInput baseInput--hidden" [formControlName]="'notExist'" />
+                                                <mat-icon class="checkbox__icon checkbox__icon--unchecked" [svgIcon]="'checkbox-false'"></mat-icon>
+                                                <mat-icon class="checkbox__icon checkbox__icon--checked" [svgIcon]="'checkbox-true'"></mat-icon>
+                                                <span class="control__postfix">Услугу не оказываю</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                            </div>
+                        </ng-container>
+
+                        <div class="form__groupDevidor devidor">
+                            <div class="devidor__line"></div>
+                            <div class="devidor__title">
+                                <span>ФОТО</span>
+                            </div>
+                            <div class="devidor__line"></div>
+                        </div>
+
+                        <div class="form__group">
+                            <div class="form__control control">
+                                <span class="control__label">Прикрепите фотографию к объявлению</span>
+                                <div class="control__input">
+                                    <input #fileInput class="baseInput baseInput--hidden" type="file" (change)="loadFile($event, 'photo')" [placeholder]="'Не более 50 символов'" />
+                                    <button class="btn btn--secondary" (click)="fileInput.click()">Загрузить</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br/>
+                        <br/>
+                        <br/>
+                        
+                        <div class="form__group">
+                            <div class="form__control control">
+                                <label class="control__input checkbox">
+                                    <input type="checkbox" class="baseInput baseInput--hidden" [formControlName]="'agree'" />
+                                    <mat-icon class="checkbox__icon checkbox__icon--unchecked" [svgIcon]="'checkbox-false'"></mat-icon>
+                                    <mat-icon class="checkbox__icon checkbox__icon--checked" [svgIcon]="'checkbox-true'"></mat-icon>
+                                    <span class="control__postfix">Я соглашаюсь с правилами использования сервиса, а также с передачей и обработкой моих данных в evarus.ru. Я подтверждаю своё совершеннолетие и ответственность за размещение.</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <br/>
+                        <br/>
+                        
+                        <div class="form__submitBtn">
+                            <button class="btn btn--primary" [disabled]="form.invalid" (click)="submitForm()">ПРОДОЛЖИТЬ</button>
+                        </div>
+                       
+                    </form>
+                </ng-container>
+            </div>
+        </section>
+    </div>
+</div>

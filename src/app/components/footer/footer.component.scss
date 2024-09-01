@@ -1,0 +1,84 @@
+@import '../../../styles/grid.scss';
+
+.footer {
+
+    // .footer__container
+
+    &__container {
+        background-color: #586C75;
+    }
+
+    // .footer__content
+
+    &__content {
+        display: flex;
+        align-items: center;
+        padding: 41px 0px 87px;
+
+        @media($media_lg) {
+            justify-content: space-between;
+        }
+
+        @media($media_sm) {
+            flex-direction: column-reverse;
+            padding-bottom: 40px;
+        }
+    }
+
+    // .footer__logo
+
+    &__logo {
+    }
+
+    // .footer__nav
+
+    &__nav {
+        flex-grow: 1;
+        margin-left: 5%;
+        display: flex;
+        align-items: center;
+        // justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 30px;
+        // display: grid;
+        // grid-template-columns: repeat(5, 1fr);
+
+        @media($media_lg) {
+            max-width: 70%;
+            margin-left: 0px;
+        }
+
+        @media($media_sm) {
+            flex-direction: column;
+            margin-bottom: 40px;
+        }
+    }
+
+    // .footer__item
+
+    &__item {
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    // .footer__link
+
+    &__link {
+        font-size: 16px;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #fff;
+        transition: 0.2s linear;
+        // text-align: center;
+
+        @media($media_md) {
+            font-size: 14px;
+            text-align: center;
+        }
+
+        &:hover {
+            color: var(--main-blue);
+        }
+    }
+}

@@ -1,0 +1,34 @@
+<div #headerRef class="header">
+    <div class="header__container">
+        <div class="header__logo logo">
+            <app-logo></app-logo>
+        </div>
+        <div class="header__menu">
+            <div class="header__menuItem">
+                <a class="header__menuLink" [routerLink]="'about'">О ПРОЕКТЕ</a>
+            </div>
+            <div class="header__menuItem">
+                <a class="header__menuLink" [routerLink]="'home'">КОНТАКТЫ</a>
+            </div>
+        </div>
+        <div class="header__button">
+            <button class="btn btn--primary" (click)="redirectToCreateAddPage()">ДОБАВИТЬ ОБЪЯВЛЕНИЕ</button>
+        </div>
+        <div class="header__burger" [class.header__burger--active]="isMenuActive" (click)="toggleMenu()">
+            <div class="header__burgerLine header__burgerLine--1"></div>
+            <div class="header__burgerLine header__burgerLine--2"></div>
+            <div class="header__burgerLine header__burgerLine--3"></div>
+        </div>
+        <div class="header__hiddenMenu" [class.header__hiddenMenu--active]="isMenuActive" [style.--headerHeight]="headerHeight + 'px'">
+            <div class="header__menuItem">
+                <a class="header__menuLink" [routerLink]="'about'" (click)="toggleMenu()">О ПРОЕКТЕ</a>
+            </div>
+            <div class="header__menuItem">
+                <a class="header__menuLink" [routerLink]="'home'" (click)="toggleMenu()">КОНТАКТЫ</a>
+            </div>
+            <div class="header__button header__button--mobile">
+                <button class="btn btn--primary" (click)="redirectToCreateAddPage()">ДОБАВИТЬ ОБЪЯВЛЕНИЕ</button>
+            </div>
+        </div>
+    </div>
+</div>

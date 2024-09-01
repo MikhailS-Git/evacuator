@@ -1,0 +1,18 @@
+<div class="footer">
+    <div class="footer__container">
+        <div class="main-container">
+            <div class="footer__content">
+                <div class="footer__logo">
+                    <app-logo></app-logo>
+                </div>
+                <div class="footer__nav">
+                    <ng-container *ngFor="let item of items">
+                        <div class="footer__item">
+                            <a class="footer__link" [routerLink]="item.link" [routerLinkActive]="'footer__link--active'">{{ item.title }}</a>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

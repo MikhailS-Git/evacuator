@@ -1,0 +1,41 @@
+.checkbox {
+    display: flex;
+    cursor: pointer;
+
+    // .checkbox__icon
+
+    &__icon {
+        min-width: 24px;
+        max-width: 24px;
+        min-height: 24px;
+        max-height: 24px;
+
+        // .checkbox__icon--unchecked
+
+        &--unchecked {
+            display: block;
+        }
+
+        // .checkbox__icon--checked
+
+        &--checked {
+            display: none !important;
+        }
+    }
+
+    
+
+    .baseInput:checked {
+        &~.checkbox__icon--unchecked {
+            display: none;
+        }
+
+        &~.checkbox__icon--checked {
+            display: block !important;
+        }
+    }
+
+    .control__postfix {
+        white-space: unset;
+    }
+}

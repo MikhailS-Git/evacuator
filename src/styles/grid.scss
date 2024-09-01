@@ -1,0 +1,23 @@
+// Контейнеры
+$screen_base_container: 1400px;
+$screen_xl_container: 1300px; 
+$screen_lg_container: 90vw;
+$screen_md_container: 90vw;
+$screen_sm_container: 90vw;
+
+// Брейкпоинты
+$screen_xl_breakpoint: 1600px; // desktop
+$screen_lg_breakpoint: 1400px; // notebooks big
+$screen_md_breakpoint: 1100px; // notebooks
+$screen_sm_breakpoint: 780px; // planshet
+$screen_xs_breakpoint: 440px; // mobile
+
+//  ТОЧЕЧНЫЙ АДАПТИВ (ПРОМЕЖУТОЧНЫЙ)  \\
+
+$media_not_sm: "min-width: " + ($screen_sm_breakpoint + 1); // все размеры кроме моб (более 780px)
+
+$media_xl: "max-width: " + $screen_xl_breakpoint;
+$media_lg: "max-width: " + $screen_lg_breakpoint;
+$media_md: "max-width: " + $screen_md_breakpoint;
+$media_sm: "max-width: " + $screen_sm_breakpoint;
+$media_xs: "max-width: " + $screen_xs_breakpoint;

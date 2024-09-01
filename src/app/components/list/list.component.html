@@ -1,0 +1,42 @@
+<div class="list">
+    <div class="list__container">
+        <ng-container *ngIf="data">
+            <ng-container *ngIf="items.length">
+                <div  class="list__header">
+                    <div class="list__sortBtn" [class.list__sortBtn--reverse]="isSortReverse" >
+                        <button class="btn btn--outlined" (click)="sortItems()">
+                            Сортировка
+                            <mat-icon [svgIcon]="'chevron-down'"></mat-icon>
+                        </button>
+                    </div>
+                </div>
+                <div class="list__items">
+                   <ng-container *ngFor="let item of visibleItems">
+                       <app-card [data]="item"></app-card>
+                   </ng-container>
+                </div>
+                <ng-container *ngIf="showPaginator">
+                    <div class="list__paginator">
+                        <ng-container *ngIf="visiblePages[0] > 2">
+                            <button class="btn btn--small list__pagePrevBtn" (click)="onPrevPageClick()">
+                                <mat-icon [svgIcon]="'chevron-down'"></mat-icon>
+                            </button>
+                        </ng-container>
+                        <ng-container *ngFor="let page of visiblePages; let index = index">
+                            <button
+                                class="btn btn--small list__page"
+                                [class.list__page--active]="page-1 === currentPageIndex"
+                                (click)="onPageClick(page-1)"
+                            >{{ page }}</button>
+                        </ng-container>
+                        <ng-container *ngIf="visiblePages[visiblePages.length - 1] < totalPages">
+                            <button class="btn btn--small list__pageNextBtn" (click)="onNextPageClick()">
+                                <mat-icon [svgIcon]="'chevron-down'"></mat-icon>
+                            </button>
+                        </ng-container>
+                    </div>
+                </ng-container>
+            </ng-container>
+        </ng-container>
+    </div>
+</div>

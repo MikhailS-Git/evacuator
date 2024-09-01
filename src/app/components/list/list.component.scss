@@ -1,0 +1,73 @@
+.list {
+
+    // .list__container
+
+    &__container {
+    }
+
+    // .list__header
+
+    &__header {
+        display: flex;
+    }
+
+    // .list__sortBtn
+
+    &__sortBtn {
+        margin-left: auto;
+        margin-bottom: 25px;
+
+        &--reverse {
+            mat-icon {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    // .list__items
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+        gap: 45px;
+    }
+
+    // .list__paginator
+
+    &__paginator {
+        margin-top: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+    }
+
+     // .list__page
+
+     &__page {
+        &--active {
+            background-color: var(--main-blue);
+            color: #fff;
+
+            &:hover {
+                background-color: var(--main-blue-hover);
+            }
+
+            &:active {
+                background-color: var(--main-blue-click);
+            }
+        }
+    }
+
+    &__pagePrevBtn {
+        mat-icon {
+            transform: rotate(90deg);
+        }
+    }
+
+    &__pageNextBtn {
+        mat-icon {
+            transform: rotate(-90deg);
+        }
+    }
+}

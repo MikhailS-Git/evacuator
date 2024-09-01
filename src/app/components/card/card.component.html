@@ -1,0 +1,63 @@
+<div class="card">
+    <div class="card__container">
+            <ng-container *ngIf="data">
+                <div class="card__header">
+                    <h3 class="card__title">{{ data.name }} </h3>
+                </div>
+                <div class="card__body">
+                    <div class="card__content">
+                        <div class="card__picture">
+                            <img [src]="data.picture" />
+                        </div>
+                        <div class="card__data">
+                            <ng-container *ngFor="let item of data.dataItems">
+                                <div class="card__dataItem">
+                                    <div class="card__dataItemName">
+                                        <span>{{ item.name }}</span>
+                                    </div>
+                                    <div class="card__dataItemValue">
+                                        <span>{{ item.value }}</span>
+                                    </div>
+                                </div>
+                            </ng-container>
+                        </div>
+                        <div class="card__contacts">
+                            <!-- <div class="card__contactsTop"> -->
+                                <div class="card__contact">
+                                    <a class="btn btn--primary"  [href]="'tel:'+data.phone"><mat-icon [svgIcon]="'phone'"></mat-icon>{{ data.phone }}</a>
+                                </div>
+                                <div class="card__contact">
+                                    <a class="btn btn--primary" [href]="'tel:'+data.fax"><mat-icon [svgIcon]="'fax'"></mat-icon>{{ data.fax }}</a>
+                                </div>
+                            <!-- </div> -->
+                            <!-- <div class="card__contactsBottom"> -->
+                                <div class="card__placement">
+                                    <div class="card__placementTitle">
+                                        <mat-icon [svgIcon]="'map-point'"></mat-icon>
+                                        <span>Место стоянки</span>
+                                    </div>
+                                    <div class="card__placementValue">
+                                        <span>{{ data.place }}</span>
+                                    </div>
+                                </div>
+                                <div class="card__orderAddvertBtn">
+                                    <button class="btn btn--secondary"><span class="text-small">ID объявления {{ data.id }}</span><span class="text-big">Заказать рекламу</span></button>
+                                </div>
+                            <!-- </div> -->
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="card__footer">
+                    <div class="card__footerText">
+                        <span>{{ data.text }}</span>
+                    </div>
+                </div>
+            </ng-container>
+          <ng-container *ngIf="!data">
+              <div class="card__empty">
+                  <span>Нет данных</span>
+              </div>
+          </ng-container>
+    </div>
+</div>
